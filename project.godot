@@ -11,8 +11,10 @@ config_version=5
 [application]
 
 config/name="GodotOwl"
+config/version="0.0.1"
 config/tags=PackedStringArray("plugins")
 config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://addons/godot_owl/logo_square.png"
 
 [display]
 
