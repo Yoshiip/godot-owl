@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bguyfrvxtqsy7"]
+
+[ext_resource type="Script" path="res://addons/godot_owl/window/main/window.gd" id="1_clkye"]
+
+[node name="window" type="Window"]
+disable_3d = true
+gui_embed_subwindows = true
+title = "GodotOwl"
+initial_position = 4
+size = Vector2i(480, 320)
+unresizable = true
+transparent = true
+script = ExtResource("1_clkye")
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]

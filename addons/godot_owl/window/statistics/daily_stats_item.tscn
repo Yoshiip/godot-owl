@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://mbh8ohwdey8d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1k8xh"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 24
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="daily_stats_item" type="Panel"]
+custom_minimum_size = Vector2(80, 112)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1k8xh")
+
+[node name="day" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 52.0
+grow_horizontal = 2
+text = "Lun, 16 Sept."
+autowrap_mode = 3
+
+[node name="time" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "00:00:00"
+horizontal_alignment = 1
+vertical_alignment = 1

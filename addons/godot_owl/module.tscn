@@ -1,0 +1,116 @@
+[gd_scene load_steps=7 format=3 uid="uid://qjjhrd0lw533"]
+
+[ext_resource type="Script" path="res://addons/godot_owl/module.gd" id="1_lgpg6"]
+[ext_resource type="Texture2D" uid="uid://dhnstd2x5uiw2" path="res://addons/godot_owl/icon.png" id="2_yi35q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uekhw"]
+content_margin_left = 28.0
+content_margin_right = 8.0
+bg_color = Color(1, 1, 1, 1)
+draw_center = false
+border_width_left = 24
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.239216, 0.945098, 0.658824, 0.498039)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2r1fi"]
+content_margin_left = 28.0
+content_margin_right = 8.0
+bg_color = Color(0.239216, 0.945098, 0.658824, 0.654902)
+border_width_left = 24
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.239216, 0.945098, 0.658824, 0.654902)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tg3rf"]
+content_margin_left = 28.0
+content_margin_right = 8.0
+bg_color = Color(1, 1, 1, 1)
+draw_center = false
+border_width_left = 24
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.239216, 0.945098, 0.658824, 0.654902)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ba6ct"]
+content_margin_left = 28.0
+content_margin_right = 8.0
+bg_color = Color(0.239216, 0.945098, 0.658824, 0.654902)
+border_width_left = 24
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.270588, 0.52549, 0.854902, 0.654902)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[node name="module" type="MenuButton"]
+custom_minimum_size = Vector2(100, 28)
+offset_right = 100.0
+offset_bottom = 28.0
+tooltip_text = "Godot Owl"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_uekhw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2r1fi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tg3rf")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ba6ct")
+text = "01:54:29"
+flat = false
+alignment = 2
+item_count = 3
+popup/item_0/text = "Total session time : 00h 00m 11s"
+popup/item_0/id = 4
+popup/item_0/disabled = true
+popup/item_1/text = "Pause"
+popup/item_1/id = 0
+popup/item_2/text = "Statistics"
+popup/item_2/id = 1
+script = ExtResource("1_lgpg6")
+
+[node name="icon" type="TextureRect" parent="."]
+modulate = Color(0.239216, 0.945098, 0.658824, 0.498039)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -8.0
+offset_right = 20.0
+offset_bottom = 8.0
+grow_vertical = 2
+texture = ExtResource("2_yi35q")
+
+[node name="timer" type="Timer" parent="."]
+autostart = true
+
+[node name="autosave" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="autosave" to="." method="_on_autosave_timeout"]

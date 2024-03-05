@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkgjnnuqgord7"]
+
+[ext_resource type="Texture2D" uid="uid://dtuc1f6l0w8sp" path="res://addons/godot_owl/window/statistics/day_view/chart_image.png" id="1_4rq2e"]
+
+[node name="day_chart" type="Control"]
+custom_minimum_size = Vector2(16, 80)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="bar" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_4rq2e")
+region_rect = Rect2(0, 0, 16, 12)
+patch_margin_top = 8
